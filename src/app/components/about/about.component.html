@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+  
+</head>
+<body>
+  <div class="button-group">
+    <a routerLink="/abouts" class="button">Tạo mới khách hàng</a>
+    <a routerLink="/create-category" class="button">Thêm danh mục</a>
+    <a routerLink="/create-category" class="button">In dữ liệu</a>
+  
+
+  </div>
+  <div class="search-container">
+    <form action="/search">
+      <input type="text" placeholder="Nhập từ khóa tìm kiếm" name="search">
+      <button type="submit"><i class="fa fa-search"></i>Tìm Kiếm</button>
+    </form>
+  </div>
+  <div class="center">
+		<p>Danh Sách Tạo Mới Đơn Hàng</p>
+	</div>
+    <div class="container">
+        <h1>Đăng kí sản phẩm </h1>
+        <form>
+          <label for="name">Tên khách hàng:</label>
+          <input type="text" id="name" name="name" required>
+    
+          <label for="phone">Số điện thoại:</label>
+          <input type="text" id="phone" name="phone" required>
+    
+          <label for="address">Địa chỉ:</label>
+          <input type="text" id="address" name="address" required>
+    
+          <label for="product">Sản phẩm:</label>
+          <select id="product" name="product" required>
+            <option value="">--Chọn sản phẩm--</option>
+            <option value="product1">Đồng hồ Casio</option>
+            <option value="product2">Đồng hồ Seiko</option>
+            <option value="product3">Đồng hồ Citizen</option>
+          </select>
+    
+          <label for="quantity">Số lượng:</label>
+          <input type="text" id="quantity" name="quantity" required>
+    
+          <input type="submit" value="Tạo đơn hàng" onclick="createOrder()">
+        </form>
+    
+        <table>
+          <tr>
+            <th>Tên khách hàng</th>
+            <th>Số điện thoại</th>
+            <th>Địa chỉ</th>
+            <th>Sản phẩm</th>
+            <th>Số lượng</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>Nguyễn Văn A</td>
+            <td>0987654321</td>
+            <td>Hà Nội</td>
+            <td>Đồng hồ Casio</td>
+            <td>2</td>
+            <td><a href="#">Sửa</a> | <a href="#">Xóa</a></td>
+          </tr>
+          <tr>
+            <td>Nguyễn Văn A</td>
+            <td>0987654321</td>
+            <td>Hà Nội</td>
+            <td>Đồng hồ Casio</td>
+            <td>2</td>
+            <td><a href="#">Sửa</a> | <a href="#">Xóa</a></td>
+          </tr>
+        </table>
+      </div>
+    
+      <script>
+        function createOrder() {
+          // Lấy thông tin từ form
+          var name = document.getElementById("name").value;
+          var phone = document.getElementById("phone").value;
+          var address = document.getElementById("address").value;
+          var product = document.getElementById("product").value;
+          var quantity = document.getElementById("quantity").value;
+    
+          // Gửi thông tin đến server để tạo mới đơn hàng
+          // ...
+    
+          // Hiển thị thông báo tạo mới đơn hàng thành công
+          alert("Tạo mới đơn hàng thành công!");
+        }
+      </script>
+<body>
+<html>
+
+

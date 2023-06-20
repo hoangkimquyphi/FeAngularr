@@ -1,0 +1,96 @@
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    }
+    
+    .button {
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    text-decoration: none;
+    margin-right: 10px;
+    cursor: pointer;
+    }
+    
+    .button:hover {
+    background-color: #006B8F;
+    }
+    .search-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+    
+    input[type=text] {
+      width: 250px;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+    }
+    
+    button[type=submit] {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #008CBA;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    button[type=submit]:hover {
+      background-color: #006B8F;
+    }
+    
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 10px 0;
+  }
+  .row label {
+      flex-basis: 20%;
+      margin-right: 10px;
+      text-align: right;
+  }
+  .row input, .row select {
+      flex-basis: 50%;
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+  }
+  .row input[type="submit"] {
+      margin-left: 20%;
+      background-color:  #00bfff;
+      color: white;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+  }
+  .row input[type="submit"]:hover {
+      background-color: #45a049;
+  }
+  table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: auto;
+      margin-top: 50px;
+  }
+  table th, td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+  }
+  table th {
+      background-color:  #00bfff;
+      color: white;
+  }
