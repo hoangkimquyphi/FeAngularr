@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+    
+  
+</head>
+<body>
+  <div class="button-group">
+    <a routerLink="/create-supplier" class="button">Tạo mới khách hàng</a>
+    <a routerLink="/create-category" class="button">Thêm danh mục</a>
+    <a routerLink="/create-category" class="button">In dữ liệu</a>
+  
+
+  </div>
+  <div class="search-container">
+    <form action="/search">
+      <input type="text" placeholder="Nhập từ khóa tìm kiếm" name="search">
+      <button type="submit"><i class="fa fa-search"></i>Tìm Kiếm</button>
+    </form>
+  </div>
+  <div class="center">
+		<p>Quản Lý Đơn Hàng</p>
+	</div>
+    <div class="container">
+		<h1>Quản lý đơn hàng</h1>
+		<h2>Danh sách đơn hàng</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Mã đơn hàng</th>
+					<th>Ngày đặt hàng</th>
+					<th>Trạng thái</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>001</td>
+					<td>01/01/2023</td>
+					<td>Đã giao hàng</td>
+					<td>
+						<button class="view-btn" data-order-id="001">Xem</button>
+						<button class="edit-btn" data-order-id="001">Sửa trạng thái</button>
+						<button class="send-notification-btn" data-order-id="001">Gửi thông báo</button>
+					</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>02/01/2023</td>
+					<td>Chưa giao hàng</td>
+					<td>
+						<button class="view-btn" data-order-id="002">Xem</button>
+						<button class="edit-btn" data-order-id="002">Sửa trạng thái</button>
+						<button class="send-notification-btn" data-order-id="002">Gửi thông báo</button>
+					</td>
+				</tr>
+				<!-- Các đơn hàng khác -->
+			</tbody>
+		</table>
+		<h2>Danh sách đơn hàng đã nhận hàng</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Mã đơn hàng</th>
+					<th>Ngày đặt hàng</th>
+					<th>Trạng thái</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>003</td>
+					<td>03/01/2023</td>
+					<td>Đã nhận hàng</td>
+				</tr>
+				<tr>
+					<td>004</td>
+					<td>04/01/2023</td>
+					<td>Đã nhận hàng</td>
+				</tr>
+				<!-- Các đơn hàng khác -->
+			</tbody>
+		</table>
+	</div>
+<body>
+<html>
+

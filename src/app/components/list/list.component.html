@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+   
+
+</head>
+<body>
+  <div class="button-group">
+    <a routerLink="/qlsp" class="button">Tạo mới khách hàng</a>
+    <a routerLink="/danhmuc" class="button">Xem Giá Sản Phẩm</a>
+    <a routerLink="/insp" class="button">In dữ liệu</a>
+  
+
+  </div>
+  <div class="search-container">
+    <form action="/search">
+      <input type="text" placeholder="Nhập từ khóa tìm kiếm" name="search">
+      <button type="submit"><i class="fa fa-search"></i>Tìm Kiếm</button>
+    </form>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Tình trạng</th>
+        <th>Giá tiền</th>
+        <th>Danh mục</th>
+        <th>Chức năng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.status}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.category}}</td>
+        <td>
+          <button (click)="editProduct(product.id)">Sửa</button>
+          <button (click)="deleteProduct(product.id)">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<body>
+<html>
+
+<router-outlet></router-outlet>

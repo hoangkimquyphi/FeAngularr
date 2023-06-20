@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+  
+</head>
+<body>
+  <div class="button-group">
+    <a routerLink="/home" class="button">Tạo mới Sản Phẩm</a>
+    <a routerLink="/list" class="button">Thêm danh mục</a>
+    <a routerLink="/danhmuc" class="button">In dữ liệu</a>
+  
+
+  </div>
+  <div class="cart-container">
+    <h2>HÌNH ẢNH </h2>
+    <div *ngIf="cartItems.length === 0" class="empty-cart">
+      Your cart is empty.
+    </div>
+    <div *ngIf="cartItems.length > 0">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <img [src]="item.image" alt="{{ item.name }}" class="cart-item-image">
+        <div class="cart-item-details">
+          <div class="cart-item-name">{{ item.name }}</div>
+          <div class="cart-item-price">{{ item.price | currency }}</div>
+          <div class="cart-item-quantity">Quantity: {{ item.quantity }}</div>
+          <button class="cart-item-remove" (click)="removeFromCart(item)">Remove from cart</button>
+        </div>
+      </div>
+      <div class="cart-total">
+        Total: {{ getTotal() | currency }}
+      </div>
+    </div>
+  </div>
+<body>
+<html>
+

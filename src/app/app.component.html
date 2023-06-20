@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+	<title> </title>
+ 
+    <style>
+ /* Reset styles */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  
+  
+}
+
+/* Header styles */
+header {
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logout a {
+  background-color: #fff;
+  color: #007bff;
+  border-radius: 3px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.logout a:hover {
+  background-color: #eee;
+}
+
+/* Sidebar styles */
+aside {
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 0;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+aside ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+aside li {
+  margin-bottom: 10px;
+}
+
+aside a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+aside a:hover {
+  background-color: #eee;
+}
+
+
+
+/* Main content styles */
+main {
+  margin-top: 60px;
+  margin-left: 200px;
+  padding: 20px;
+}
+
+
+
+
+
+/* Footer styles */
+footer {
+  background-color: #ccc;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+        </style>
+
+	
+
+</head>
+<body>
+
+ <!-- Header -->
+ <header>
+  <a href="#">Logout</a>
+
+<div class="logo">Admin Panel</div>
+<nav>
+<ul>
+<li><a href="#">Dashboard</a></li>
+<li><a href="#">Products</a></li>
+<li><a href="#">Orders</a></li>
+<li><a href="#">Customers</a></li>
+<li><a href="#">Settings</a></li>
+</ul>
+</nav>
+<div class="logout">
+<a routerLink="/hinhanh">Đăng Xuất</a>
+</div>
+</header>
+
+<!-- Sidebar -->
+<aside>
+<ul>
+  <li><a routerLink="/tongket"> Dashboard</a></li>
+
+<li><a routerLink="/spham"> Quản Lý Sản Phẩm</a></li>
+<li><a routerLink="/mathang">Quản lý Khách Hàng</a></li>
+<li><a routerLink="/donhang">Quản Lý Đơn Hàng</a></li>
+<li><a routerLink="/notfound">Quản Lý Nhân Viên</a></li>
+<li><a routerLink="/insp">Quản Lý Tài Khoản</a></li>
+
+
+</ul>
+</aside>
+
+<!-- Content -->
+<main>
+<!-- Content goes here -->
+</main>
+
+<!-- Footer -->
+<footer>
+<p>&copy; 2023 My Company. All rights reserved.</p>
+</footer>
+<body>
+<html>
+  <router-outlet></router-outlet>
+

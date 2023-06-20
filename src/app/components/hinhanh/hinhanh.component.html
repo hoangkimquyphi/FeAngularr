@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+  
+	
+</head>
+<body>
+
+  
+ 
+  <div class="container">
+    <h1>Đăng xuất</h1>
+    <form id="logout-form" action="#" method="post">
+      <p>Bạn có chắc chắn muốn đăng xuất?</p>
+      <input type="submit" value="Đăng xuất">
+    </form>
+  </div>
+
+  <script>
+    // Lấy form đăng xuất
+    var logoutForm = document.getElementById("logout-form");
+
+    // Xử lý khi người dùng submit form
+    logoutForm.addEventListener("submit", function(event) {
+      // Ngăn chặn trình duyệt gửi form đăng xuất lên server
+      event.preventDefault();
+
+      // Gửi yêu cầu đăng xuất đến server
+      // ...
+
+      // Chuyển người dùng về trang đăng nhập hoặc trang chủ của trang web
+      window.location.href = "login.html";
+    });
+  </script>
+
+</body>
+</html>
+    
+
+
+
+
