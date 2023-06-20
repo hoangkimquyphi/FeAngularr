@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    margin-bottom: 20px;
+  }
+  
+  table {
+    margin-bottom: 20px;
+  }
+  
+  .btn-edit {
+    margin-right: 10px;
+  }
+  
+  .btn-delete {
+    margin-left: 10px;
+  }
+  
+  .btn-add {
+    margin-bottom: 20px;
+  }
+  
+  footer {
+    margin-top: 20px;
+  }

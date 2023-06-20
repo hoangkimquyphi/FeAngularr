@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thêm sản phẩm vào giỏ hàng bằng JavaScript</title>
+</head>
+<body>
+  <div>
+    <h1>Giỏ hàng</h1>
+    <ul id="cart"></ul>
+  </div>
+
+  <div>
+    <h1>Sản phẩm</h1>
+    <ul>
+      <li>
+        <img src="product1.jpg" alt="Product 1">
+        <h2>Product 1</h2>
+        <p>Giá: $10</p>
+        <input type="number" id="quantity1" value="1">
+        <button onclick="addToCart('Product 1', 10, 'product1.jpg', document.getElementById('quantity1').value)">Thêm vào giỏ hàng</button>
+      </li>
+      <li>
+        <img src="product2.jpg" alt="Product 2">
+        <h2>Product 2</h2>
+        <p>Giá: $20</p>
+        <input type="number" id="quantity2" value="1">
+        <button onclick="addToCart('Product 2', 20, 'product2.jpg', document.getElementById('quantity2').value)">Thêm vào giỏ hàng</button>
+      </li>
+      <li>
+        <img src="product3.jpg" alt="Product 3">
+        <h2>Product 3</h2>
+        <p>Giá: $30</p>
+        <input type="number" id="quantity3" value="1">
+        <button onclick="addToCart('Product 3', 30, 'product3.jpg', document.getElementById('quantity3').value)">Thêm vào giỏ hàng</button>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Tạo một giỏ hàng trống
+    var cart = [];
+
+    // Hàm thêm sản phẩm vào giỏ hàng
+    function addToCart(name, price, image, quantity) {
+      // Lấy thông tin sản phẩm
+      var item = {
+        name: name,
+        price: price,
+        image: image,
+        quantity: quantity
+      };
+
+      // Thêm sản phẩm vào giỏ hàng
+      cart.push(item);
+
+      // Cập nhật giỏ hàng trên trang web
+      updateCart();
+    }
+
+    // Hàm cập nhật giỏ hàng trên trang web
+    function updateCart() {
+      // Lấy phần tử có id là "cart"
+      var cartElement = document.getElementById("cart");
+
+      // Xóa tất cả các phần tử trong giỏ hàng
+      cartElement.innerHTML = "";
+
+      // Duyệt qua tất cả các sản phẩm trong giỏ hàng và hiển thị thông tin sản phẩm trên trang web
+      for (var i = 0; i < cart.length; i++) {
+        var item = cart[i];
+        var itemElement = document.createElement("li");
+        itemElement.innerHTML = item.name + " - $" + item.price + " x " + item.quantity;
+        cartElement.appendChild(itemElement);
+      }
+    }
+  </script>
+</body>
+</html>
