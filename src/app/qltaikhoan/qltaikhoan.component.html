@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý tài khoản người dùng</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Quản lý tài khoản người dùng</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tài khoản</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Đăng xuất</a>
+          </li>
+        </ul>
+      </div>
+         
+      </nav>
+    </header>
+    
+    <main class="container my-4">
+      <h2>Danh sách người dùng</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tên đăng nhập</th>
+            <th>Email</th>
+            <th>Họ và tên</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>nguyenvananh</td>
+            <td>nguyenvananh@example.com</td>
+            <td>Nguyễn Văn Anh</td>
+            <td>
+              <button class="btn btn-outline-primary btn-edit">Chỉnh sửa</button>
+              <button class="btn btn-outline-danger btn-delete">Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>tranvanhiep</td>
+            <td>tranvanhiep@example.com</td>
+            <td>Trần Văn Hiệp</td>
+            <td>
+              <button class="btn btn-outline-primary btn-edit">Chỉnh sửa</button>
+             
+              <button class="btn btn-outline-danger btn-delete">Xóa</button>
+            </td>
+          </tr>
+          <!-- thêm các dòng tr cho các người dùng khác -->
+        </tbody>
+      </table>
+      
+      <button class="btn btn-primary btn-add">Thêm người dùng</button>
+    </main>
+    
+    <footer class="bg-light text-center py-3">
+      <p>Bản quyền © 2023 - Quản lý tài khoản người dùng</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+<router-outlet></router-outlet>

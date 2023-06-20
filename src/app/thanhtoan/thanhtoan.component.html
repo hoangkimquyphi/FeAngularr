@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<head>
+<title>Free Home Shoppe Website Template | Home :: w3layouts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+</head>
+<body>
+  <div class="wrap">
+	<div class="header">
+		<div class="headertop_desc">
+			<div class="call">
+				 <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></p>
+			</div>
+			<div class="account_desc">
+				<ul>
+					<li><a routerLink="/register">Đăng Ký</a></li>
+					<li><a routerLink="/login">Đăng Nhập</a></li>
+					<li><a href="#">Delivery</a></li>
+					<li><a routerLink="/cart">checkout</a></li>
+					<li><a routerLink="/qltaikhoan">Myaccout</a></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="header_top">
+			<div class="logo">
+				<a routerLink="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQvBexMmuN1C_EvTEE_X0MAaou8-OCv062uQ&usqp=CAU" alt="" width="180px" height="100px"/></a>
+			</div>
+			  <div class="cart">
+			  	   <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
+			  	   	<ul class="dropdown">
+							<li>you have no items in your Shopping cart</li>
+					</ul>
+                </div>
+           
+			  </div>
+			  <script type="text/javascript">
+			function DropDown(el) {
+				this.dd = el;
+				this.initEvents();
+			}
+			DropDown.prototype = {
+				initEvents : function() {
+					var obj = this;
+
+					obj.dd.on('click', function(event){
+						$(this).toggleClass('active');
+						event.stopPropagation();
+					});	
+				}
+			}
+
+			$(function() {
+
+				var dd = new DropDown( $('#dd') );
+
+				$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-2').removeClass('active');
+				});
+
+			});
+
+		</script>
+	 <div class="clear"></div>
+  </div>
+	<div class="header_bottom">
+	     	<div class="menu">
+	     		<ul>
+			    	<li class="active"><a routerLink="/">Trang Chủ</a></li>
+			    	<li><a routerLink="/product">Sản Phẩm</a></li>
+			    	<li><a routerLink="/about">Giới Thiệu</a></li>
+			    	<li><a routerLink="#">Blog</a></li>
+			    	<li><a routerLink="contact">Liên Hệ</a></li>
+                    <li><a routerLink="/thanhtoan">Thanh Toán</a></li>
+			    	<div class="clear"></div>
+     			</ul>
+	     	</div>
+	     	<div class="search_box">
+	     		<form>
+	     			<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+	     		</form>
+	     	</div>
+	     	<div class="clear"></div>
+            </div>
+            
+            
+
+            <div class="container">
+                <h1>Thanh toán bằng thẻ QR và ATM</h1>
+                <form id="payment-form">
+                    <div>
+                        <p>Lựa chọn phương thức thanh toán:</p>
+                        <input type="radio" id="pay-by-qr-code" name="payment-method" value="qr-code" required>
+                        <label for="pay-by-qr-code">Thanh toán bằng mã QR code</label><br>
+                        <input type="radio" id="pay-by-atm" name="payment-method" value="atm">
+                        <label for="pay-by-atm">Thanh toán bằng ATM</label><br>
+                    </div>
+        
+                    <div id="qr-code-section">
+                        <label for="qr-code">Mã QR:</label>
+                        <input type="text" id="qr-code" name="qr-code">
+                    </div>
+        
+                    <div id="atm-section">
+                        <label for="bank">Ngân hàng:</label>
+                        <select id="bank" name="bank">
+                            <option value="vcb">Ngân hàng TMCP Ngoại Thương Việt Nam</option>
+                            <option value="acb">Ngân hàng TMCP Á Châu</option>
+                            <option value="vtb">Ngân hàng TMCP Việt Nam Thịnh Vượng</option>
+                            <option value="hsbc">Ngân hàng Ngoại Thương (HSBC)</option>
+                        </select>
+        
+                        <label for="account-number">Số tài khoản:</label>
+                        <input type="text" id="account-number" name="account-number">
+        
+                        <label for="amount">Số tiền thanh toán:</label>
+                        <input type="text" id="amount" name="amount">
+                    </div>
+        
+                    <button type="submit">Xác nhận thanh toán</button>
+                </form>
+        
+                <div id="response-message"></div>
+            </div>
+        <script>
+            // show/hide sections based on payment method selected
+function toggleSection() {
+	let qrCodeSection = document.getElementById('qr-code-section');
+	let atmSection = document.getElementById('atm-section');
+	let qrCodeRadio = document.getElementById('pay-by-qr-code');
+	let atmRadio = document.getElementById('pay-by-atm');
+
+	if (qrCodeRadio.checked) {
+		qrCodeSection.style.display = 'block';
+		atmSection.style.display = 'none';
+	} else if (atmRadio.checked) {
+		atmSection.style.display = 'block';
+		qrCodeSection.style.display = 'none';
+	}
+}
+
+document.getElementById('payment-form').addEventListener('submit', function(event) {
+	// prevent form from submitting
+	event.preventDefault();
+
+	// get input values
+	let amount = document.getElementById('amount').value;
+	let message = '';
+	let qrCodeRadio = document.getElementById('pay-by-qr-code');
+	let atmRadio = document.getElementById('pay-by-atm');
+
+	// check which payment method is selected
+	if (qrCodeRadio.checked) {
+		let qrCode = document.getElementById('qr-code').value;
+		message = `Bạn đã thanh toán ${amount} VNĐ bằng mã QR code: ${qrCode}`;
+	} else if (atmRadio.checked) {
+		let bank = document.getElementById('bank').value;
+		let accountNumber = document.getElementById('account-number').value;
+		message = `Bạn đã thanh toán ${amount} VNĐ qua ATM của ngân hàng ${bank} với số tài khoản ${accountNumber}`;
+	}
+
+	// display response message
+	document.getElementById('response-message').innerHTML = message;
+});
+
+// attach event listeners to radio buttons
+document.getElementById('pay-by-qr-code').addEventListener('click', toggleSection);
+document.getElementById('pay-by-atm').addEventListener('click', toggleSection);
+
+        </script>
+
+        
+
+
+         
+
+
+ <div class="footer">
+            <div class="wrap">	
+            <div class="section group">
+                   <div class="col_1_of_4 span_1_of_4">
+                           <h4>Information</h4>
+                           <ul>
+                           <li><a href="about.html">About Us</a></li>
+                           <li><a href="contact.html">Customer Service</a></li>
+                           <li><a href="#">Advanced Search</a></li>
+                           <li><a href="delivery.html">Orders and Returns</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                           </ul>
+                       </div>
+                   <div class="col_1_of_4 span_1_of_4">
+                       <h4>Why buy from us</h4>
+                           <ul>
+                           <li><a href="about.html">About Us</a></li>
+                           <li><a href="contact.html">Customer Service</a></li>
+                           <li><a href="#">Privacy Policy</a></li>
+                           <li><a href="contact.html">Site Map</a></li>
+                           <li><a href="#">Search Terms</a></li>
+                           </ul>
+                   </div>
+                   <div class="col_1_of_4 span_1_of_4">
+                       <h4>My account</h4>
+                           <ul>
+                               <li><a href="contact.html">Sign In</a></li>
+                               <li><a href="index.html">View Cart</a></li>
+                               <li><a href="#">My Wishlist</a></li>
+                               <li><a href="#">Track My Order</a></li>
+                               <li><a href="contact.html">Help</a></li>
+                           </ul>
+                   </div>
+                   <div class="col_1_of_4 span_1_of_4">
+                       <h4>Contact</h4>
+                           <ul>
+                               <li><span>+91-123-456789</span></li>
+                               <li><span>+00-123-000000</span></li>
+                           </ul>
+                           <div class="social-icons">
+                               <h4>Follow Us</h4>
+                                    <ul>
+                                     <li><a href="#" target="_blank"><img src="images/facebook.png" alt="" /></a></li>
+                                     <li><a href="#" target="_blank"><img src="images/twitter.png" alt="" /></a></li>
+                                     <li><a href="#" target="_blank"><img src="images/skype.png" alt="" /> </a></li>
+                                     <li><a href="#" target="_blank"> <img src="images/dribbble.png" alt="" /></a></li>
+                                     <li><a href="#" target="_blank"> <img src="images/linkedin.png" alt="" /></a></li>
+                                     <div class="clear"></div>
+                                </ul>
+                               </div>
+                   </div>
+               </div>			
+           </div>
+           <div class="copy_right">
+                   <p>&copy; 2013 home_shoppe. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+              </div>
+       </div>
+ 
+<router-outlet></router-outlet>

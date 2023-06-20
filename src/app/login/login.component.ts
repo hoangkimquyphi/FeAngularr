@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+  userInfo = {
+    userName: '',
+    password: '',
+    rememberMe: false,
+  };
+  usernamePattern = /^[a-z  0-9]{6,32}$/i;
+  passwordPattern = /^[a-z0-9!@#$%]{6,32}$/;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  onSubmit(form: NgForm): void {
+    console.log(form);
+  }
+}
+
